@@ -2,4 +2,4 @@
 
 Recipe App Practice Project
 
-link:
+link: https://teodorignat.github.io/therecipebox/
