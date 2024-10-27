@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheMealMaster App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Jockey+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="lib/swiper.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/ad089776ca.js" crossorigin="anonymous"></script>
+    <script src="lib/swiper.js"></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="flex-column">
+            <div class="nav-container">
+                <nav>
+                  <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li>  
+                      <a href="/index.html">
+                        <div class="logo bold">The Recipe Box.</div>
+                      </a>
+                    </li>
+                    <li><a href="/recipes.html">Explore More</a></li>
+                  </ul>
+                </nav>
+            </div>
+            <div class="search-container flex-column flex-center">
+                <form class="flex-column flex-center" action="search.html">
+                  <div class="search-radio flex-row">
+                    <label class="radio-btn" for="meal">Meal
+                      <input type="radio" id="meal" name="type" value="meal" checked />
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="radio-btn" for="ingredient">Ingredient
+                      <input type="radio" id="ingredient" name="type" value="ingredient" />
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class="search-box flex-row flex-center">
+                    <input
+                      type="text"
+                      name="search-term"
+                      id="search-term"
+                      placeholder="Search for something tasty..."
+                      required
+                    />
+                    <button class="search-btn" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+            </div>
+            <div class="tab-menu flex-row flex-center">
+              <div class="tab">
+                <h2>Categories</h2>
+              </div>
+              <div class="tab">
+                <h2>Area</h2>
+              </div>
+            </div>
+        </header>
+        <main>
+          <section id="meal-by-category" class="flex-column">
+            <div class="swiper">
+              <div class="swiper-wrapper type flex-row">
+              </div>
+            </div>
+            <div>
+              <div id="meal-category" class="grid">
+              </div>
+            </div>
+          </section>
+          <section id="meal-by-country" class="flex-column">
+            <div class="swiper">
+              <div class="swiper-wrapper type flex-row">
+              </div>
+            </div>
+            <div>
+              <div id = "meal-area" class="grid">
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+            <div class="footer-container">
+              <a href="index.html">
+                <div class="logo bold">The Recipe Box.</div>
+              </a>
+              <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="https://www.twitter.com" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://www.instagram.com" target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+        </footer>
+    </div>
+    <div class="spinner"></div>
+</body>
+</html>

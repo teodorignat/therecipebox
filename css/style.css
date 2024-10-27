@@ -1,0 +1,675 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: #000;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #52796F;
+    --color-secondary: #16796F;
+    --color-green: #16796F;
+    --color-green-alpha: rgba(22, 121, 111, 0.3);
+    --color-yellow: #88A09A;
+    --color-white: #F1F3F0;
+    --color-white-alpha: rgba(241, 243, 240, 0.6);
+    --color-alert: red;
+    --color-alert-alpha: rgba(255, 0, 0,0.5); 
+    --color-text: #10564F;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 1.5em;
+    background-color: var(--color-secondary);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    color: var(--color-text)
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.app-container {
+    width: 100%;
+    padding: 20px 25px;
+    background-color: var(--color-white);
+    box-shadow: inset 0px 0px 15px 2px; 
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5em;
+}
+
+.nav-container {
+    width: 100%;
+    min-height: 3em;
+    padding: 0 .5em;
+    display: block;
+}
+
+.filler {
+    width: 50px;
+}
+
+.logo {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 15px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.6);
+}
+
+a .logo {
+    font-family: "Jockey One", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: var(--color-text);
+    letter-spacing: 0.1em;
+}
+
+.logo span {
+    font-family: initial;
+    font-weight: 200;
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+nav ul li {
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a {
+    transition: all 0.3s ease-out;
+    color: var(--color-text);
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: var(--color-text);
+    transition: all 0.2s ease-in;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    background: url(../images/header-bg.jpg) center center;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0, 0.6);
+}
+
+
+form {
+    width: 400px;
+}
+
+.search-radio {
+    align-self: flex-end;
+    color: var(--color-white);
+}
+
+/* The container */
+.radio-btn {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--color-white);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .radio-btn input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* On mouse-over, add a background color */
+  .radio-btn:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a background */
+  .radio-btn input:checked ~ .checkmark {
+    background-color: var(--color-white);
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .radio-btn input:checked ~ .checkmark:after {
+    display: flex;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .radio-btn .checkmark:after {
+       top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-primary);
+  }
+
+.search-box {
+    width: 100%;
+    background-color: var(--color-primary);
+    border: 1px solid #84A98C;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0, 0.4);
+    transition: all 0.2s ease-out;
+}
+
+.search-box:focus-within {
+    scale: 1.1;
+    transition: all 0.2s ease-in;
+    background-color: var(--color-white);
+}
+
+.search-box:focus-within .search-btn, .search-box:focus-within i::before {
+    background-color: var(--color-primary);
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.search-btn {
+    background-color: var(--color-white);
+    padding: 15px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.search-btn i::before {
+    color: var(--color-text);
+}
+
+.search-btn:hover {
+    scale: 1.1;
+    transition: all 0.2s ease-in;
+}
+
+#search-term {
+    padding: 15px 6px 15px 15px;
+    width: 100%;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    color: var(--color-text)
+}
+
+#search-term::placeholder {
+    color: var(--color-white)
+}
+
+#search-term:focus::placeholder {
+    color: var(--color-text)
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5em;
+}
+
+.section-header {
+    width: 100%;
+    padding: 15px 0;
+    justify-content: space-between !important;
+    border-bottom: 2px solid var(--color-green-alpha);
+}
+
+.see-all-btn {
+    cursor: pointer;
+    
+}
+
+.see-all-btn:hover p, .see-all-btn i::before {
+    color: var(--color-text);
+}
+
+.swiper {
+    width: 100%;
+    height: 50%;
+}
+.swiper2 {
+    /* width: 100%; */
+    height: 50%;
+}
+
+.swiper-wrapper {
+    padding: 20px;
+}
+
+.swiper-slide.type {
+    padding: 25px 10px;
+    /* border: 2px solid var(--color-green-alpha); */
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: var(--color-yellow);
+    box-shadow: -3px 3px 3px 0px rgba(0,0,0, 0.4);
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide.type h2 {
+    font-size: 18px;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.swiper-slide.type:hover {
+    scale: 0.95;
+    transition: all 0.1s ease-in;
+}
+
+.swiper-slide.type.selected, .swiper-slide.type.selected h2 {
+    background-color: var(--color-green);
+    border-color: var(--color-green-alpha);
+    color: var(--color-white);
+    scale: 1.1;
+    transition: all 0.1s ease-in;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.card img {
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0, 0.4);
+}
+
+.card h2 {
+    font-size: 20px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+.card:hover {
+    scale: 1.1;
+    transition: all 0.2s ease-in;
+}
+
+.tab-menu {
+    width: 100%;
+    gap: 0 !important;
+}
+
+.tab {
+    width: 50%;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;;
+    border-top-right-radius: 10px;;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab h2 {
+    color: var(--color-primary);
+}
+
+.tab:first-child {
+    border-top-right-radius: 0px;
+    border-bottom: 2px solid var(--color-green-alpha);
+    
+}
+
+.tab:last-child {
+    border-top-left-radius: 0px;
+    border-bottom: 2px solid var(--color-green-alpha);
+}
+
+.tab:hover {
+    border-bottom: none;
+    border-top: 1px solid var(--color-green-alpha);
+    background: linear-gradient(to bottom, var(--color-green-alpha), var(--color-white));
+    transition: all 0.2s ease;
+}
+
+.tab:hover h2 {
+    color: var(--color-text);
+}
+
+.tab.selected {
+    border-bottom: none;
+    border-top: 1px solid var(--color-green-alpha);
+    background: linear-gradient(to bottom, var(--color-green-alpha), var(--color-white));
+    transition: all 0.2s ease;
+}
+
+.tab.selected h2 {
+    color: var(--color-text);
+}
+
+#recipe-container {
+    margin-top: 1em;
+    gap: 2em;
+}
+
+.recipe-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+.recipe-header h2 {
+    font-family: "Jockey One", sans-serif;
+    font-size: 55px;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.recipe-header img {
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0, 0.4);
+}
+
+.recipe-body {
+    width: 90%;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--color-green-alpha);
+    border-radius: 15px;
+    color: var(--color-white);
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0, 0.4);
+    gap: 1em;
+}
+
+.recipe-body h2 {
+    color: var(--color-text);
+}
+
+.ingredients {
+    width: 100%;
+    border-right: 3px solid var(--color-white);
+}
+
+.ingredients ul {
+    width: 100%;
+    padding: 15px;
+}
+
+.ingredients ul a li {
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.ingredients ul a li .measure {
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.ingredients ul a li .ingredient {
+    font-weight: 900;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.ingredients ul a li img{
+    width: 35px;
+}
+
+.instructions {
+    width: 100%;
+}
+
+.instructions p {
+    color: var(--color-text);
+}
+
+.search-header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+.search-header strong {
+    color: var(--color-green);
+}
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }  
+
+.social-links i, .social-links i::before, .social-links i::after {
+    color:var(--color-text);
+}
+
+
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.text-small {
+    font-size: .9em;
+}
+
+.text-small {
+    font-size: 13px;
+}
+
+.alert {
+    width: 300px;;
+    position: absolute;
+    top: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    padding: 15px 15px;
+    background: var(--color-alert-alpha);
+    border: 2px solid var(--color-alert);
+    border-radius: 5px;
+    color: var(--color-white);
+    font-weight: 700;
+    text-align: center;
+}
+
+@media only screen and (min-width: 180px) and (max-width: 280px) {
+    .app-container {
+        width: 95vw;
+        padding: 10px;
+    }
+    
+    .search-container {
+        min-height: 250px;
+    }
+    
+}
+
+@media only screen and (min-width: 280px) and (max-width:680px) { 
+    .app-container {
+        width: 95vw;
+        padding: 10px;
+    }
+    
+    .search-container {
+        min-height: 250px;
+    }
+    
+    a .logo {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
+    nav ul li {
+        min-width: 60px;
+    }
+    
+    nav ul li a {
+        font-size: 12px;
+    }
+    
+    form {
+        width: 280px;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .card img {
+        width: 100px;
+    }
+
+    .recipe-body {
+        flex-direction: column;
+    }
+
+    .ingredients {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--color-white);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    a .logo {
+        font-size: 30px;
+    }
+
+    .recipe-body {
+        flex-direction: column;
+    }
+
+    .ingredients {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--color-white);
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    a .logo {
+        font-size: 45px;
+    }
+
+    .recipe-body {
+        flex-direction: row;
+    }
+
+    .ingredients {
+        width: 45%;
+        border-bottom: none;
+        border-right: 3px solid var(--color-white);
+    }
+
+    
+}
+
+@media only screen and (min-width: 1400px) {
+    .app-container {
+        width: 85vw;
+    }
+}
+
+@media only screen and (min-width: 1700px) {
+    .app-container {
+        width: 60vw;
+    }
+}
