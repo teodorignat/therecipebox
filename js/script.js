@@ -30,10 +30,10 @@ function loadStateFromLink() {
 async function displaySlider(type) {
     const { meals } = await getData(`list.php?${type === 'categories' ? 'c' : 'a'}=list`); 
 
-    if (type === 'categories' && state.currentPage === '/index.html') {
+    if (type === 'categories' && state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
             state.currentCategory = meals[0].strCategory;
             updateSeeAllLinks();
-        } else if (type === 'area' && state.currentPage === '/index.html') {
+        } else if (type === 'area' && state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
             state.currentCountry = meals[0].strArea;
             updateSeeAllLinks();
         }
