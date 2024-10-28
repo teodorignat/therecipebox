@@ -334,12 +334,12 @@ async function getData(endpoint) {
 function init() {
 
     switch (state.currentPage) {
-        case 'https://teodorignat.github.io/therecipebox/':
-        case 'https://teodorignat.github.io/therecipebox/index.html':
+        case '/therecipebox/':
+        case '/therecipebox/index.html':
             displaySlider('categories');
             displaySlider('area');
             break;
-        case 'https://teodorignat.github.io/therecipebox/recipes.html':
+        case '/therecipebox/recipes.html':
             const tabs = document.querySelectorAll('.tab');
             loadStateFromLink();
             hideSection(state.type);
@@ -347,10 +347,10 @@ function init() {
             displaySlider(state.type);
             tabs.forEach(tab => tab.addEventListener('click', selectTab));
             break;
-            case 'https://teodorignat.github.io/therecipebox/recipe-details.html':
+            case '/therecipebox/recipe-details.html':
                 displayRecipeDetails();
                 break;
-            case 'https://teodorignat.github.io/therecipebox/search.html':
+            case '/therecipebox/search.html':
                 search();
                 break;
     }
