@@ -91,13 +91,13 @@ async function selectType(e,type) {
   
     if (type === 'categories' ) {
         state.currentCategory = e.currentTarget.children[0].textContent;
-        if (state.currentPage === '/index.html') {
+        if (state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
             updateSeeAllLinks()
         }
     } else if (type === 'area') {
         state.currentCountry = e.currentTarget.children[0].textContent;
         
-        if (state.currentPage === '/index.html') {
+        if (state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
             updateSeeAllLinks()
         }
     }
@@ -122,7 +122,7 @@ async function displayMeals(type) {
         const div = document.createElement('div');
         div.classList.add('swiper-slide','card'); 
         
-        div.innerHTML = `<a class='flex-column flex-center' href="recipe-details.html?id=${meal.idMeal}">
+        div.innerHTML = `<a class='flex-column flex-center' href="https://teodorignat.github.io/therecipebox/recipe-details.html?id=${meal.idMeal}">
             <img src="${meal.strMealThumb}" alt="noimg">
             <h2>${meal.strMeal}</h2>
         </a>`;
@@ -226,7 +226,7 @@ function displaySearchResults(results) {
         div.classList.add('card');
 
         div.innerHTML = `<div class="card">
-                            <a class='flex-column flex-center' href="recipe-details.html?id=${meal.idMeal}">
+                            <a class='flex-column flex-center' href="https://teodorignat.github.io/therecipebox/recipe-details.html?id=${meal.idMeal}">
                                 <img src="${meal.strMealThumb}" alt="noimg">
                                 <h2>${meal.strMeal}</h2>
                             </a>
@@ -249,8 +249,8 @@ function displayHeader(length, term) {
 function updateSeeAllLinks() {
     const links = document.querySelectorAll('.section-header a');
 
-    links[0].setAttribute('href',`/recipes.html?queryCat=${state.currentCategory}&queryArea=${state.currentCountry}&type=categories`)
-    links[1].setAttribute('href',`/recipes.html?queryCat=${state.currentCategory}&queryArea=${state.currentCountry}&type=area`)
+    links[0].setAttribute('href',`https://teodorignat.github.io/therecipebox/recipes.html?queryCat=${state.currentCategory}&queryArea=${state.currentCountry}&type=categories`)
+    links[1].setAttribute('href',`https://teodorignat.github.io/therecipebox/recipes.html?queryCat=${state.currentCategory}&queryArea=${state.currentCountry}&type=area`)
 }
 
 // Hide section
@@ -335,11 +335,11 @@ function init() {
 
     switch (state.currentPage) {
         case '/':
-        case '/index.html':
+        case 'https://teodorignat.github.io/therecipebox/index.html':
             displaySlider('categories');
             displaySlider('area');
             break;
-        case '/recipes.html':
+        case 'https://teodorignat.github.io/therecipebox/recipes.html':
             const tabs = document.querySelectorAll('.tab');
             loadStateFromLink();
             hideSection(state.type);
@@ -347,10 +347,10 @@ function init() {
             displaySlider(state.type);
             tabs.forEach(tab => tab.addEventListener('click', selectTab));
             break;
-            case '/recipe-details.html':
+            case 'https://teodorignat.github.io/therecipebox/recipe-details.html':
                 displayRecipeDetails();
                 break;
-            case '/search.html':
+            case 'https://teodorignat.github.io/therecipebox/search.html':
                 search();
                 break;
     }
