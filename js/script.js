@@ -334,7 +334,7 @@ async function getData(endpoint) {
 function init() {
 
     switch (state.currentPage) {
-        case '/':
+        case 'https://teodorignat.github.io/therecipebox/':
         case 'https://teodorignat.github.io/therecipebox/index.html':
             displaySlider('categories');
             displaySlider('area');
