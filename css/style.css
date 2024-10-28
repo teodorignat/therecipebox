@@ -572,7 +572,7 @@ main {
 
 @media only screen and (min-width: 180px) and (max-width: 280px) {
     .app-container {
-        width: 95vw;
+        width: 98vw;
         padding: 10px;
     }
     
@@ -584,7 +584,7 @@ main {
 
 @media only screen and (min-width: 280px) and (max-width:680px) { 
     .app-container {
-        width: 95vw;
+        width: 98vw;
         padding: 10px;
     }
     
