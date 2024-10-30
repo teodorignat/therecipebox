@@ -293,8 +293,6 @@ main {
 
 .swiper-wrapper {
     padding: 20px;
-    justify-content: center;
-    align-items: center;
 }
 
 .swiper-slide.type {
