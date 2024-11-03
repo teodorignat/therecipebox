@@ -570,22 +570,7 @@ main {
     text-align: center;
 }
 
-@media only screen and (min-width: 180px) and (max-width: 280px) {
-     body {
-        padding: .3em;
-    }
-    .app-container {
-        width: 98vw;
-        padding: 10px;
-    }
-    
-    .search-container {
-        min-height: 250px;
-    }
-    
-}
-
-@media only screen and (min-width: 280px) and (max-width:680px) { 
+@media only screen and (min-width: 180px) and (max-width:680px) { 
      body {
         padding: .3em;
     }
@@ -623,6 +608,14 @@ main {
         width: 100px;
     }
 
+    .recipe-header h2 {
+        font-size: 35px;
+    }
+
+    .recipe-header img {
+        width: 90%;
+    }
+    
     .recipe-body {
         flex-direction: column;
     }
