@@ -270,6 +270,7 @@ main {
     width: 100%;
     padding: 15px 0;
     justify-content: space-between !important;
+    align-items: center;
     border-bottom: 2px solid var(--color-green-alpha);
 }
 
