@@ -30,10 +30,10 @@ function loadStateFromLink() {
 async function displaySlider(type) {
     const { meals } = await getData(`list.php?${type === 'categories' ? 'c' : 'a'}=list`); 
 
-    if (type === 'categories' && state.currentPage === '/therecipebox/index.html') {
+    if (type === 'categories' && (state.currentPage === '/therecipebox/index.html' || state.currentPage === '/therecipebox/')) {
             state.currentCategory = meals[0].strCategory;
             updateSeeAllLinks();
-        } else if (type === 'area' && state.currentPage === '/therecipebox/index.html') {
+        } else if (type === 'area' && (state.currentPage === '/therecipebox/index.html' || state.currentPage === '/therecipebox/')) {
             state.currentCountry = meals[0].strArea;
             updateSeeAllLinks();
         }
@@ -91,13 +91,13 @@ async function selectType(e,type) {
   
     if (type === 'categories' ) {
         state.currentCategory = e.currentTarget.children[0].textContent;
-        if (state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
+        if (state.currentPage === '/therecipebox/index.html' || state.currentPage === '/therecipebox/') {
             updateSeeAllLinks()
         }
     } else if (type === 'area') {
         state.currentCountry = e.currentTarget.children[0].textContent;
         
-        if (state.currentPage === 'https://teodorignat.github.io/therecipebox/index.html') {
+        if (state.currentPage === '/therecipebox/index.html' || state.currentPage === '/therecipebox/') {
             updateSeeAllLinks()
         }
     }
